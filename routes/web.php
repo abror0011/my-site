@@ -15,7 +15,8 @@ Route::get('/', 'SiteController@home')->name('home');
 
 //Shop psge
 Route::get('/shop', 'SiteController@shop')->name('shop');
-
+// features
+Route::get('/features','SiteController@features')->name('features');
 // About Us 
 Route::get('/about', 'SiteController@about')->name('about');
 //Blog
@@ -23,6 +24,6 @@ Route::get('/blog','SiteController@blog')->name('blog');
 //Contact
 Route::get('/contact', 'SiteController@contact')->name('contact');
 //Admin routes
-Route::prefix('admin')->group(function(){
-    Route::resource('posts','Admin\PostsController');
+Route::namespace('Admin')->name('admin.')-> prefix('admin')->group(function(){
+    Route::resource('posts','PostsController');
 }); 

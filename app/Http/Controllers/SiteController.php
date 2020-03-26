@@ -21,6 +21,10 @@ class SiteController extends Controller
     {
         return view('shop');
     }
+    public function features()
+    {
+        return view('features');
+    }
     public function blog()
     {
         $posts = Post::orderBy('id','DESC')->paginate(2);
